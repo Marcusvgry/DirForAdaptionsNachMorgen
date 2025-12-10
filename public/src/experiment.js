@@ -1,0 +1,46 @@
+var timeline = [];
+
+const jsPsych = initJsPsych({
+  on_finish: function () {
+    const responses = jsPsych.data
+      .get()
+      .filter({ trial_type: "survey-html-form" })
+      .values()[0].response;
+    const vpnNumber = responses["VPN-Nummer"];
+
+    const filename = `IntentionalesVergessen2_VP${vpnNumber}.csv`;
+
+    jsPsych.data.get().localSave("csv", filename);
+  },
+});
+
+var freeRecallList = [];
+
+// Preload
+
+function createTimeline() {
+  timeline.push(preload);
+  timeline.push(CBC_VPNNummer);
+  timeline.push(stMarys);
+  timeline.push(breakInstructions);
+  timeline.push(stanfordSleepiness);
+  timeline.push(
+    pvt_start_screen,
+    pvt_practice_outer,
+    pvt_main_instructions,
+    pvt_core,
+    pvt_end_screen
+  );
+  timeline.push(
+    rwtIntro,
+    rwtInstructions,
+    rwtPorM,
+    getReady,
+    rwtProfessionsorHobbies
+  );
+  timeline.push(Debriefing);
+}
+function startExperiment() {
+  createTimeline();
+  jsPsych.run(timeline);
+}
