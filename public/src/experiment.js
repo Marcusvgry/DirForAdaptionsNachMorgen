@@ -16,8 +16,6 @@ const jsPsych = initJsPsych({
 
 var freeRecallList = [];
 
-// Preload
-
 function createTimeline() {
   timeline.push(preload);
   timeline.push(CBC_VPNNummer);

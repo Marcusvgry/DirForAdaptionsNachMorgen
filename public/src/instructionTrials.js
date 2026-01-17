@@ -1,4 +1,4 @@
-// Erste Instruktionen
+
 const CBC_VPNNummer = {
   type: jsPsychSurveyHtmlForm,
   preamble: ``,

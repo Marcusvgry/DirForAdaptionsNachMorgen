@@ -5,19 +5,16 @@ function checkOther(
   text_ids = null,
   select_ids = null
 ) {
-  // Normalize to arrays
   if (text_ids && !Array.isArray(text_ids)) text_ids = [text_ids];
   if (select_ids && !Array.isArray(select_ids)) select_ids = [select_ids];
 
   const showExtraFields = comparison.includes(val);
 
-  // Show/hide additional div if applicable
   if (div_id) {
     const div = document.getElementById(div_id);
     if (div) {
       div.style.display = showExtraFields ? "block" : "none";
 
-      // If hiding: clear all inputs and selects inside the div
       if (!showExtraFields) {
         const elements = div.querySelectorAll("input, select, textarea");
         elements.forEach((el) => {
