@@ -27,14 +27,15 @@ function createTimeline() {
     pvt_practice_outer,
     pvt_main_instructions,
     pvt_core,
-    pvt_end_screen
+    pvt_end_screen,
   );
   timeline.push(
     rwtIntro,
     rwtInstructions,
     rwtPorM,
+    rwtInstructions2,
     getReady,
-    rwtProfessionsorHobbies
+    rwtProfessionsorHobbies,
   );
   timeline.push(Debriefing);
 }
